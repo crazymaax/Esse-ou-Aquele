@@ -2,10 +2,9 @@
 v2.0 | 20110126
 License: none (public domain)
 */
+@use "utilities";
 
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-
-$background-color: #ffe7a3;
 
 @keyframes floating {
     0% { transform: translate(0,  0px); }
@@ -35,7 +34,7 @@ time, mark, audio, video {
 }
 
 html {
-  background-color: $background-color;
+  background-color: utilities.$primary-color;
   font-family: 'Varela Round', sans-serif;
   text-align: center;
 }
