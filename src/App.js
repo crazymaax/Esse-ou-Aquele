@@ -7,25 +7,27 @@ import "./style/style.scss"
 function App() {
 
   const { firstImage, setFirstImage, secondImage, setSecondImage } = useCat()
+  const [isLoading, setIsLoading] = useState(true)
 
   const generateImages = async () => {
     const first = await generateCatImage()
     const second = await generateCatImage()
     setFirstImage(first)
     setSecondImage(second)
+    setIsLoading(false)
   }
 
   useEffect(() => {
     generateImages()
   }, [])
 
-  const generateNewImage = (message) => {
-    if(message = "Esse!"){
-      setFirstImage(generateImages())
-      setSecondImage(generateImages())
-    }else if(message = "Aquele!"){
-      setFirstImage(generateImages())
-      setSecondImage(generateImages())
+  const generateNewImage = async (message, id) => {
+    setIsLoading(true)
+    generateImages()
+    if (message = "Esse!") {
+      //Colocar a lógica onde soma a pontuação para esse ID
+    } else if (message = "Aquele!") {
+      //Colocar a lógica onde soma a pontuação para esse ID
     }
   }
 
@@ -37,15 +39,16 @@ function App() {
         <h2>Escolha o gatinho mais fofinho 🐈</h2>
       </header>
       <main>
-        {secondImage ? (
+        {isLoading === false ? (
           <>
             <div>
-              <img src={firstImage.url} alt="" id={firstImage.id}/>
-              <button onClick={() => generateNewImage("Esse!")}>Esse!</button>
+              <img src={firstImage.url} alt="" id={firstImage.id} />
+              <button onClick={() => generateNewImage("Esse!", firstImage.id)}>Esse!</button>
             </div>
+            <span>OU</span>
             <div>
-              <img src={secondImage.url} alt="" id={secondImage.id}/>
-              <button onClick={() => generateNewImage("Aquele!")}>Aquele!</button>
+              <img src={secondImage.url} alt="" id={secondImage.id} />
+              <button onClick={() => generateNewImage("Aquele!", secondImage.id)}>Aquele!</button>
             </div>
           </>
         ) : (
