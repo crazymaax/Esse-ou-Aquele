@@ -4,7 +4,7 @@ Jogo simples onde são mostrados fotos de gatinhos aleatoriamente, onde temos a 
 
 <div align="center">
 
-<img src="https://i.ibb.co/Q8qh2wH/V-deo-sem-t-tulo-Feito-com-o-Clipchamp.gif" alt="Esse ou Aquele">
+<img src="https://media1.tenor.com/images/fea95c5c2f4dbe245a9f852fb9fdba14/tenor.gif?itemid=25915720" alt="Esse ou Aquele">
 
 </div>
 
