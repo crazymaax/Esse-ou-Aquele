@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { useCat } from "./providers/cat";
 import { generateCatImage } from "./services/cat";
+import { loadingPhrases, catFacts } from "./services/cat/db"
 
 import { TiSocialLinkedinCircular, TiSocialGithubCircular } from "react-icons/ti"
 
@@ -11,7 +12,7 @@ function App() {
 
   const { firstImage, setFirstImage, secondImage, setSecondImage } = useCat()
   const [isLoading, setIsLoading] = useState(true)
-  const loadingPhrases = ["Carregando...❤", "Buscando os gatinhos! 🐾", "Tirando foto do sapeca 📷", "Brincando com novelo de lã 🧶", "Soltando bola de pelo 🌪", "Tirando uma soneca ⏰", "Se limpando 🛁", "Amassando pãozinho 🍞", "Tomando solzinho 🌞", "Caçando passarinho 🐦", "Perseguindo o rato 🐀", "Tomando leitinho 🍼"]
+  const [actualFact, setActualFact] = useState("Descubra um fato interessante agora mesmo!")
 
   const generateImages = async () => {
     const first = await generateCatImage()
@@ -42,6 +43,9 @@ function App() {
     }, randomLoadingTime);
   }
 
+  const generateFact = () => {
+    setActualFact(catFacts[Math.floor(Math.random() * catFacts.length)])
+  }
 
   return (
     <>
@@ -68,23 +72,26 @@ function App() {
       </main>
       <article>
         <h3>Um fato sobre gatos</h3>
-        <p></p>
-        <button>Quero saber outro!</button>
+        <div>
+          <p>{actualFact}</p>
+          <button onClick={() => generateFact()}>Quero saber outro!</button>
+        </div>
       </article>
 
-      <section>
+{/* A intenção é criar um TOP 10, porém ainda não há conhecimentos suficientes para banco de dados. */}
+{/*       <section>
         <h2>Top 10 🏆</h2>
         <ul>
           <li>🥇🥈🥉</li>
         </ul>
-      </section>
+      </section> */}
 
       <footer>
         <h4>Redes Sociais</h4>
         <ul>
           <li>
-            <a href="https://www.linkedin.com/in/maxmilan/" target="_blank"><TiSocialLinkedinCircular size="34px"/></a>
-            <a href="https://github.com/crazymaax" target="_blank" ><TiSocialGithubCircular size="34px"/></a>
+            <a href="https://www.linkedin.com/in/maxmilan/" target="_blank"><TiSocialLinkedinCircular size="34px" /></a>
+            <a href="https://github.com/crazymaax" target="_blank" ><TiSocialGithubCircular size="34px" /></a>
           </li>
         </ul>
       </footer>
