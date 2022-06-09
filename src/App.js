@@ -73,8 +73,8 @@ function App() {
       <article>
         <h3>Um fato sobre gatos</h3>
         <div>
-          <p>{actualFact}</p>
-          <button onClick={() => generateFact()}>Quero saber outro!</button>
+          <p className={actualFact === "Descubra um fato interessante agora mesmo!" && "redText"}>{actualFact}</p>
+          <button onClick={() => generateFact()}>{actualFact === "Descubra um fato interessante agora mesmo!" ? "Descobrir!" : "Quero saber outro!"}</button>
         </div>
       </article>
 

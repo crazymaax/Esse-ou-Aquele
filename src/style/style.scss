@@ -151,6 +151,12 @@ article {
         }
     }
 
+    .redText {
+        font-weight: 800;
+        font-size: 1.2em;
+        color: utilities.$terciary-color;
+    }
+
     @media (min-width: 768px) {
         padding: 30px 100px;
         padding-top: 10px;
