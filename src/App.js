@@ -11,7 +11,7 @@ function App() {
 
   const { firstImage, setFirstImage, secondImage, setSecondImage } = useCat()
   const [isLoading, setIsLoading] = useState(true)
-  const loadingPhrases = ["Carregando...❤", "Buscando os gatinhos! 🐾", "Tirando foto do sapeca 📷", "Brincando com novelo de lã 🧶", "Soltando bola de pelo 🌪", "Tirando uma soneca ⏰", "Se limpando 🛁", "Amassando pãozinho 🍞", "Tomando solzinho 🌞"]
+  const loadingPhrases = ["Carregando...❤", "Buscando os gatinhos! 🐾", "Tirando foto do sapeca 📷", "Brincando com novelo de lã 🧶", "Soltando bola de pelo 🌪", "Tirando uma soneca ⏰", "Se limpando 🛁", "Amassando pãozinho 🍞", "Tomando solzinho 🌞", "Caçando passarinho 🐦", "Perseguindo o rato 🐀", "Tomando leitinho 🍼"]
 
   const generateImages = async () => {
     const first = await generateCatImage()
