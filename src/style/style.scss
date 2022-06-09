@@ -8,12 +8,9 @@ header {
     }
     
     h2 {
+        @include utilities.animation;
         font-size: 28px;
         margin-top: 10px;
-        animation-name: floating;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
         margin-left: 30px;
         margin-top: 5px;
     }
@@ -50,30 +47,19 @@ main {
         }
 
         button {
+            @include utilities.button;
             background-color: utilities.$primary-color;
-            border: 1px solid black;
-            border-radius: 4px;
             width: 90px;
             font-size: 1rem;
             margin-top: 3px;
-            font-family: 'Varela Round', sans-serif;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.5s;
-            &:hover {
-                background: utilities.$secondary-color;
-            }
         }
 
     }
     .main__spanLoading {
+        @include utilities.animation;
         font-size: 22px;
         text-align: center;
         margin: auto;
-        animation-name: floating;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
     }
     
     .main__spanOr {
@@ -136,18 +122,10 @@ article {
         align-items: center;
         
         button {
+            @include utilities.button;
             background-color: utilities.$terciary-color;
-            border: 1px solid black;
-            border-radius: 4px;
             margin-top: 10px;
             width: fit-content;
-            font-family: 'Varela Round', sans-serif;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.5s;
-            &:hover {
-                background: utilities.$secondary-color;
-            }
         }
     }
 
