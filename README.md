@@ -27,6 +27,7 @@ Além de contar com um sistema de curiosidades, onde é mostrado um fato randomi
 
 </div>
 
+Acesse <a href="https://esse-ou-aquele.vercel.app/" target="_blank">aqui!</a>
 #
 
 >Uma feature que no momento da produção do projeto não foi possível implementar, devido a falta de conhecimento em BackEnd, é a criação de um banco de dados onde se cria um ranking das fotos mais votadas.
